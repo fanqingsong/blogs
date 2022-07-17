@@ -131,7 +131,7 @@ const links = [
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
-      <title>Test blog</title>
+      <title>Test blog!!!!!!!!!!!!!!!!!!!</title>
       <div>{JSONData.title}!!!!!</div>
 
       <title>Home Page</title>
