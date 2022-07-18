@@ -1,6 +1,7 @@
 import * as React from "react"
 import { StaticImage } from 'gatsby-plugin-image'
 import JSONData from "../../data/blog.json"
+import { useStaticQuery, graphql } from 'gatsby';
 
 // styles
 const pageStyles = {
@@ -129,10 +130,40 @@ const links = [
 
 // markup
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allSqliteUsers {
+        edges {
+          node {
+            id
+            email
+            username
+            password
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data)
+
+  const users = data.allSqliteUsers.edges.map(edge => edge.node);
+  console.log(users.length + "       ------!!!")
+  console.log(users)
+
   return (
     <main style={pageStyles}>
       <title>Test blog!!!!!!!!!!!!!!!!!!!</title>
       <div>{JSONData.title}!!!!!</div>
+
+      <div>
+        <header>user list:</header>
+        <div>
+          {users.map((one, index)=>(
+            <div>name:{one.username}, email:{one.email}</div>
+          ))}
+        </div>
+      </div>
 
       <title>Home Page</title>
       <h1 style={headingStyles}>

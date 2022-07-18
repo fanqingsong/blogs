@@ -6,5 +6,18 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-source-sqlite`,
+      options: {
+        fileName: './data/SQLite.sqlite',
+        queries: [
+          {
+            statement: 'SELECT * FROM Users',
+            idFieldName: 'email',
+            name: 'Users'
+          }
+        ]
+      }
+    }
   ],
 }
