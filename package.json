@@ -1,34 +1,15 @@
 {
-  "name": "my-gatsby-site",
-  "version": "1.0.0",
+  "name": "my-project",
   "private": true,
-  "description": "my-gatsby-site",
-  "author": "lightsong",
-  "keywords": [
-    "gatsby"
-  ],
+  "version": "0.0.0",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
-    "postbuild": "rm -rf docs && mv public docs",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "dependencies": {
-    "gatsby": "^4.18.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "yarn": "^1.22.19"
+    "develop:backend": "yarn --cwd backend develop",
+    "develop:frontend": "wait-on http://localhost:1337/admin && yarn --cwd frontend develop",
+    "develop": "cross-env FORCE_COLOR=1 npm-run-all -l -p develop:*"
   },
   "devDependencies": {
-    "@wardpeet/gatsby-plugin-static-site": "^0.3.0",
-    "gatsby-plugin-asset-path": "^3.0.4",
-    "gatsby-plugin-image": "^2.18.1",
-    "gatsby-plugin-relative-paths": "^1.0.1",
-    "gatsby-plugin-sharp": "^4.18.1",
-    "gatsby-source-filesystem": "^4.18.1",
-    "gatsby-source-sqlite": "^1.0.0",
-    "gatsby-transformer-json": "^4.18.0"
+    "npm-run-all": "4.1.5",
+    "wait-on": "5.2.1",
+    "cross-env": "7.0.3"
   }
 }

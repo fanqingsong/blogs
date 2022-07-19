@@ -1,1 +1,0 @@
-/home/lightsong/workspace/blogs/public/assets/app-7ae06bb941ab39f1ef60.js
