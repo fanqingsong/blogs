@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
-  pathPrefix: `/blog`,
+  pathPrefix: `/blogs`,
   plugins: [
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-postcss",
